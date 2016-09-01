@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="V. Alexander's Style Guide for Bootstrap">
+<meta name="author" content="V. Alexander">
+
+<title>
+  {% if page.layout == "home" %}
+    {{ page.title }}
+  {% else %}
+    {{ page.title }} &middot; V. Alexander - Bootstrap Style Guide
+  {% endif %}
+</title>
+
+<!-- Bootstrap core CSS -->
+{% if site.github %}
+<link href="../dist/css/bootstrap-VACO.min.css" rel="stylesheet">
+{% else %}
+<link href="../dist/css/bootstrap-VACO.css" rel="stylesheet">
+{% endif %}
+{% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
+{% endif %}
+
+<!-- Documentation extras -->
+{% if site.github %}
+<link href="../assets/css/docs.min.css" rel="stylesheet">
+{% else %}
+<link href="../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
+<link href="../assets/css/src/docs.css" rel="stylesheet">
+{% endif %}
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="../assets/js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">

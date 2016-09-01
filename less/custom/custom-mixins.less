@@ -1,0 +1,221 @@
+// Vaco update
+.button-variant(@color; @background; @border) {
+  @active-background: darken(@background, 10%);
+  @active-border: darken(@border, 12%);
+
+  color: @color;
+  background-color: @background;
+  background-size: 200% 200%;
+  background-position: 50%;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: @active-background;
+        border-color: @active-border;
+  }
+
+  &:active {
+    background-color: darken(@background, 12%);
+    #gradient > .radial(darken(@background, 12%) 10%, @background 11%);
+    background-size: 1000% 1000%;
+    .box-shadow(2px 2px 4px rgba(0,0,0,.4));
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: @active-background;
+        border-color: @active-border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: darken(@background, 17%);
+          border-color: darken(@border, 25%);
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+.button-variant-primary(@color, @background, @border) {
+  // Custom - found by looking at bootstrap4's primary and then working backwords from there.
+  @active-background: lighten(desaturate(spin(@background, -0.0542), 1.5267), 5.4902);
+  @active-border    : darken(desaturate(spin(@background, -0.3207), 2.1978), 2.3529);
+  @hover-background : lighten(desaturate(spin(@background, -0.3538), 2.3952), 12.5490);
+  @hover-border     : lighten(desaturate(spin(@background, -0.2988), 1.2821), 10.3922);
+
+  color: @color;
+  background-color: @background;
+  background-size: 200% 200%;
+  background-position: 50%;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: @hover-background;
+        border-color: @hover-border;
+  }
+
+  &:active {
+    background-color: @active-background;
+    #gradient > .radial(@active-background 10%, @background 11%);
+    background-size: 1000% 1000%;
+    .box-shadow(2px 2px 4px rgba(0,0,0,.4));
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: @color;
+    background-color: @active-background;
+        border-color: @active-border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: @active-background;
+          border-color: @active-border;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      background-color: @background;
+          border-color: @border;
+    }
+    &:hover {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+}
+
+// Fill-color-less buttons
+
+.button-outline-variant(@color) {
+  @active-background: darken(@color, 10%);
+
+  color: @color;
+  background-image: none;
+  background-color: transparent;
+  background-size: 200% 200%;
+  background-position: 50%;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @color-white;
+    background-color: @color;
+        border-color: @color;
+  }
+
+  &:active {
+    background-color: @active-background;
+    #gradient > .radial(@active-background 10%, @color 11%);
+    background-size: 1000% 1000%;
+    .box-shadow(2px 2px 4px rgba(0,0,0,.4));
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: @color-white;
+    background-color: @color;
+        border-color: @color;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color-white;
+      background-color: darken(@color, 17%);
+          border-color: darken(@color, 25%);
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:hover,
+    &:focus,
+    &.focus {
+      border-color: lighten(@color, 20%);
+    }
+  }
+}
+
+.button-outline-variant-primary(@color) {
+  @active-background: lighten(desaturate(spin(@color, -0.0542), 1.5267), 5.4902);
+  @active-border    : darken(desaturate(spin(@color, -0.3207), 2.1978), 2.3529);
+  @hover-background : lighten(desaturate(spin(@color, -0.3538), 2.3952), 12.5490);
+  @hover-border     : lighten(desaturate(spin(@color, -0.2988), 1.2821), 10.3922);
+
+  color: @color;
+  background-image: none;
+  background-color: transparent;
+  background-size: 200% 200%;
+  background-position: 50%;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @color-white;
+    background-color: @color;
+        border-color: @color;
+  }
+
+  &:active {
+    background-color: @active-background;
+    #gradient > .radial(@active-background 10%, @color 11%);
+    background-size: 1000% 1000%;
+    .box-shadow(2px 2px 4px rgba(0,0,0,.4));
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: @color-white;
+    background-color: @active-background;
+        border-color: @active-border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color-white;
+      background-color: @active-background;
+          border-color: @active-border;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      border-color: lighten(@color, 20%);
+    }
+    &:hover {
+      border-color: lighten(@color, 20%);
+    }
+  }
+}
