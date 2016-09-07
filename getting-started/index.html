@@ -2,16 +2,17 @@
 <html lang="en">
   <head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
+    
+      <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="V. Alexander's Style Guide for Bootstrap">
+<meta name="description" content="Styleguide for V. Alexanders' Applications">
 <meta name="author" content="V. Alexander">
 
 <title>
-
-    Getting started &middot; V. Alexander - Bootstrap Style Guide
-
+  
+    Getting started &middot; V. Alexander's Bootstrap
+  
 </title>
 
 <!-- Bootstrap core CSS -->
@@ -19,12 +20,11 @@
 <link href="../dist/css/bootstrap-VACO.min.css" rel="stylesheet">
 
 
-
 <!-- Documentation extras -->
 
 <link href="../assets/css/docs.min.css" rel="stylesheet">
 
-<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="../assets/js/ie-emulation-modes-warning.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,54 +37,71 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    
   </head>
-  <body>
+  <body class="bd-docs" data-spy="scroll" data-target=".bd-sidebar-active">
     <!-- Docs master nav -->
-    <header class="navbar navbar-static-top bs-docs-nav" id="top">
+    <header class="navbar navbar-light navbar-static-top bd-navbar" id="top">
   <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="../" class="navbar-brand">V. Alexander's Bootstrap</a>
-    </div>
-    <nav id="bs-navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="../getting-started/">Getting started</a>
-        </li>
-        <li>
-          <a href="../css/">CSS</a>
-        </li>
-        <li>
-          <a href="../components/">Components</a>
-        </li>
-        <li>
-          <a href="../javascript/">JavaScript</a>
-        </li>
-      </ul>
+    <nav>
+      <div class="clearfix">
+        <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+        <a class="navbar-brand hidden-sm-up" href="/">
+          Bootstrap
+        </a>
+      </div>
+      <div class="collapse navbar-toggleable-xs" id="bd-main-nav">
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-item nav-link " href="/">Bootstrap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link active" href="/getting-started/">Getting started</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/layout/">Layout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/flexbox/">Flexbox</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/css/">CSS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/components/">Components</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/forms/">Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/custom-forms/">Custom Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link " href="/javaScript/">JavaScript</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
 
 
     <!-- Docs page layout -->
-    <div class="bs-docs-header" id="content" tabindex="-1">
+    <div class="bd-pageheader" id="content" tabindex="-1">
       <div class="container">
         <h1>Getting started</h1>
         <p>An overview of Bootstrap, how to download and use, basic templates and examples, and more.</p>
       </div>
     </div>
 
-    <div class="container bs-docs-container">
-
+    <div class="container bd-docs-container">
       <div class="row">
-        <div class="col-md-9" role="main">
-          <div class="bs-docs-section">
+        <div class="col-xs-12 col-md-9 bd-content" role="main">
+          <div class="bd-docs-section">
   <h1 id="download" class="page-header">Download</h1>
 
   <p class="lead">Bootstrap (currently v3.3.7) has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
@@ -106,7 +123,7 @@
     </div>
     <div class="col-sm-4">
       <h3 id="download-sass">Sass</h3>
-      <p><a href="">Bootstrap ported from Less to Sass</a> for easy inclusion in Rails, Compass, or Sass-only projects.</p>
+      <p><a href="https://github.com/twbs/bootstrap-sass">Bootstrap ported from Less to Sass</a> for easy inclusion in Rails, Compass, or Sass-only projects.</p>
       <p>
         <a href="https://github.com/twbs/bootstrap-sass/archive/v3.3.7.tar.gz" class="btn btn-lg btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download Sass');">Download Sass</a>
       </p>
@@ -146,14 +163,14 @@
   <p>Bootstrap uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to deal with <a href="http://webdesign.about.com/od/css/a/css-vendor-prefixes.htm">CSS vendor prefixes</a>. If you're compiling Bootstrap from its Less/Sass source and not using our Gruntfile, you'll need to integrate Autoprefixer into your build process yourself. If you're using precompiled Bootstrap or using our Gruntfile, you don't need to worry about this because Autoprefixer is already integrated into our Gruntfile.</p>
 </div>
 
-<div class="bs-docs-section">
+<div class="bd-docs-section">
   <h1 id="whats-included" class="page-header">What's included</h1>
 
   <p class="lead">Bootstrap is downloadable in two forms, within which you'll find the following directories and files, logically grouping common resources and providing both compiled and minified variations.</p>
 
-  <div class="bs-callout bs-callout-warning" id="jquery-required">
+  <div class="bd-callout bd-callout-warning" id="jquery-required">
     <h4>jQuery required</h4>
-    <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#template">starter template</a>. <a href="https://github.com/VACO-GitHub/VACO-github.github.io/blob/v3.3.7/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
+    <p>Please note that <strong>all JavaScript plugins require jQuery</strong> to be included, as shown in the <a href="#template">starter template</a>. <a href="https://github.com/twbs/bootstrap/blob/v3.3.7/bower.json">Consult our <code>bower.json</code></a> to see which versions of jQuery are supported.</p>
   </div>
 
   <h2 id="whats-included-precompiled">Precompiled Bootstrap</h2>
@@ -198,7 +215,7 @@ Copy any changes made here over to the README too. -->
   <p>The <code>less/</code>, <code>js/</code>, and <code>fonts/</code> are the source code for our CSS, JS, and icon fonts (respectively). The <code>dist/</code> folder includes everything listed in the precompiled download section above. The <code>docs/</code> folder includes the source code for our documentation, and <code>examples/</code> of Bootstrap usage. Beyond that, any other included file provides support for packages, license information, and development.</p>
 </div>
 
-<div class="bs-docs-section">
+<div class="bd-docs-section">
   <h1 id="grunt" class="page-header">Compiling CSS and JavaScript</h1>
 
   <p class="lead">Bootstrap uses <a href="http://gruntjs.com">Grunt</a> for its build system, with convenient methods for working with the framework. It's how we compile our code, run tests, and more.</p>
@@ -234,7 +251,7 @@ Copy any changes made here over to the README too. -->
   <p>Should you encounter problems with installing dependencies or running Grunt commands, first delete the <code>/node_modules/</code> directory generated by npm. Then, rerun <code>npm install</code>.</p>
 </div>
 
-<div class="bs-docs-section">
+<div class="bd-docs-section">
   <h1 id="template" class="page-header">Basic template</h1>
 
   <p class="lead">Start with this basic HTML template, or modify <a href="#examples">these examples</a>. We hope you'll customize our templates and examples, adapting them to suit your needs.</p>
@@ -270,14 +287,14 @@ Copy any changes made here over to the README too. -->
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 </div>
 
-<div class="bs-docs-section">
+<div class="bd-docs-section">
   <h1 id="tools" class="page-header">Tools</h1>
 
   <h2 id="tools-bootlint">Bootlint</h2>
   <p><strong><a href="https://github.com/twbs/bootlint">Bootlint</a></strong> is the official Bootstrap HTML <a href="http://en.wikipedia.org/wiki/Lint_(software)">linter</a> tool. It automatically checks for several common HTML mistakes in webpages that are using Bootstrap in a fairly "vanilla" way. Vanilla Bootstrap's components/widgets require their parts of the DOM to conform to certain structures. Bootlint checks that instances of Bootstrap components have correctly-structured HTML. Consider adding Bootlint to your Bootstrap web development toolchain so that none of the common mistakes slow down your project's development.</p>
 </div>
 
-<div class="bs-docs-section">
+<div class="bd-docs-section">
   <h1 id="license-faqs" class="page-header">License FAQs</h1>
   <p class="lead">Bootstrap is released under the MIT license and is copyright 2016 Twitter. Boiled down to smaller chunks, it can be described with the following conditions.</p>
 
@@ -309,77 +326,75 @@ Copy any changes made here over to the README too. -->
     <li>Submit changes that you make to Bootstrap back to the Bootstrap project (though such feedback is encouraged)</li>
   </ul>
 
-  <p>The full Bootstrap license is located <a href="https://github.com/VACO-GitHub/VACO-github.github.io/blob/master/LICENSE">in the project repository</a> for more information.</p>
+  <p>The full Bootstrap license is located <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE">in the project repository</a> for more information.</p>
 </div>
 
 
         </div>
-
-        <div class="col-md-3" role="complementary">
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
-            <ul class="nav bs-docs-sidenav">
-
-                <li>
+        <div class="col-xs-12 col-md-3 bd-sidebar" role="complementary">
+          <nav class="bd-docs-sidebar">
+            <div class="bd-toc-item active">
+              <p class="lead" href="javascript:void()">Getting started</>
+            </div>
+            <ul class="nav bd-docs-sidenav">
+              
+                <li class="bd-sidebar-header">
   <a href="#download">Download</a>
 </li>
-<li>
+<li class="bd-sidebar-header">
   <a href="#whats-included">What's included</a>
   <ul class="nav">
-    <li><a href="#whats-included-precompiled">Precompiled</a></li>
-    <li><a href="#whats-included-source">Source code</a></li>
+    <li class="bd-sidebar-subheader"><a href="#whats-included-precompiled">Precompiled</a></li>
+    <li class="bd-sidebar-subheader"><a href="#whats-included-source">Source code</a></li>
   </ul>
 </li>
-<li>
+<li class="bd-sidebar-header">
   <a href="#grunt">Compiling CSS and JavaScript</a>
   <ul class="nav">
-    <li><a href="#grunt-installing">Installing Grunt</a></li>
-    <li><a href="#grunt-commands">Available Grunt commands</a></li>
-    <li><a href="#grunt-troubleshooting">Troubleshooting</a></li>
+    <li class="bd-sidebar-subheader"><a href="#grunt-installing">Installing Grunt</a></li>
+    <li class="bd-sidebar-subheader"><a href="#grunt-commands">Available Grunt commands</a></li>
+    <li class="bd-sidebar-subheader"><a href="#grunt-troubleshooting">Troubleshooting</a></li>
   </ul>
 </li>
-<li>
+<li class="bd-sidebar-header">
   <a href="#tools">Tools</a>
   <ul class="nav">
-    <li><a href="#tools-bootlint">Bootlint</a></li>
+    <li class="bd-sidebar-subheader"><a href="#tools-bootlint">Bootlint</a></li>
   </ul>
 </li>
-<li>
+<li class="bd-sidebar-header">
   <a href="#license-faqs">License FAQs</a>
 </li>
 
-
+              
             </ul>
             <a class="back-to-top" href="#top">
               Back to top
             </a>
           </nav>
         </div>
-
       </div>
     </div>
 
     <!-- Footer
 ================================================== -->
-<footer class="bs-docs-footer">
+<footer class="bd-footer text-muted">
   <div class="container">
 
-    <ul class="bs-docs-footer-links">
-      <li><a href="https://github.com/VACO-GitHub/VACO-github.github.io">GitHub</a></li>
+    <ul class="bd-footer-links">
+      <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
       <li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
     </ul>
 
     <p>Designed and built with all the love in the world by <a href="http://www.valexander.com/">V. Alexander</a></p>
-
     <p>Code licensed <a rel="license" href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, docs <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
 
   </div>
 </footer>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
 
 
   <script src="../dist/js/bootstrap-VACO.min.js"></script>
@@ -389,10 +404,9 @@ Copy any changes made here over to the README too. -->
   <script src="../assets/js/docs.min.js"></script>
 
 
-
-
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="/assets/js/ie-emulation-modes-warning.js"></script>
 
   </body>
 </html>

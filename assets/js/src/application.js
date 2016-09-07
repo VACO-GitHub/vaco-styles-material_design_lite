@@ -9,7 +9,7 @@
  * details, see https://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global ZeroClipboard, anchors */
+/* global Clipboard, anchors */
 
 !function ($) {
   'use strict';
@@ -21,32 +21,32 @@
     var $body   = $(document.body)
 
     $body.scrollspy({
-      target: '.bs-docs-sidebar'
+      target: '.bd-docs-sidebar'
     })
     $window.on('load', function () {
       $body.scrollspy('refresh')
     })
 
     // Kill links
-    $('.bs-docs-container [href="#"]').click(function (e) {
+    $('.bd-docs-container [href="#"]').click(function (e) {
       e.preventDefault()
     })
 
     // Sidenav affixing
     setTimeout(function () {
-      var $sideBar = $('.bs-docs-sidebar')
+      var $sideBar = $('.bd-docs-sidebar')
 
       $sideBar.affix({
         offset: {
           top: function () {
             var offsetTop      = $sideBar.offset().top
             var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
-            var navOuterHeight = $('.bs-docs-nav').height()
+            var navOuterHeight = $('.bd-navbar').height()
 
             return (this.top = offsetTop - navOuterHeight - sideBarMargin)
           },
           bottom: function () {
-            return (this.bottom = $('.bs-docs-footer').outerHeight(true))
+            return (this.bottom = $('.bd-footer').outerHeight(true))
           }
         }
       })
@@ -87,18 +87,18 @@
     $('.tooltip-demo').tooltip({
       selector: '[data-toggle="tooltip"]',
       container: 'body'
-    })
+    });
     $('.popover-demo').popover({
       selector: '[data-toggle="popover"]',
       container: 'body'
-    })
+    });
 
     // Demos within modals
-    $('.tooltip-test').tooltip()
-    $('.popover-test').popover()
+    $('.tooltip-test').tooltip();
+    $('.popover-test').popover();
 
     // Popover demos
-    $('.bs-docs-popover').popover()
+    $('.bs-docs-popover').popover();
 
     // Button state demo
     $('#loading-example-btn').on('click', function () {
@@ -107,7 +107,7 @@
       setTimeout(function () {
         $btn.button('reset')
       }, 3000)
-    })
+    });
 
     // Modal relatedTarget demo
     $('#exampleModal').on('show.bs.modal', function (event) {
@@ -118,66 +118,55 @@
       var $modal = $(this)
       $modal.find('.modal-title').text('New message to ' + recipient)
       $modal.find('.modal-body input').val(recipient)
-    })
+    });
 
     // Activate animated progress bar
     $('.bs-docs-activate-animated-progressbar').on('click', function () {
       $(this).siblings('.progress').find('.progress-bar-striped').toggleClass('active')
-    })
-
-    // Config ZeroClipboard
-    ZeroClipboard.config({
-      moviePath: '/assets/flash/ZeroClipboard.swf',
-      hoverClass: 'btn-clipboard-hover'
-    })
+    });
 
     // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'
+      var btnHtml = '<div class="bd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
       $(this).before(btnHtml)
-    })
-    var zeroClipboard = new ZeroClipboard($('.btn-clipboard'))
-    var $htmlBridge = $('#global-zeroclipboard-html-bridge')
+      $('.btn-clipboard').tooltip()
+    });
 
-    // Handlers for ZeroClipboard
-    zeroClipboard.on('load', function () {
-      $htmlBridge
-        .data('placement', 'top')
+    var clipboard = new Clipboard('.btn-clipboard', {
+      target: function (trigger) {
+        return trigger.parentNode.nextElementSibling
+      }
+    })
+
+    clipboard.on('success', function (e) {
+      $(e.trigger)
+        .attr('title', 'Copied!')
+        .tooltip('_fixTitle')
+        .tooltip('show')
         .attr('title', 'Copy to clipboard')
-        .tooltip()
+        .tooltip('_fixTitle')
 
-
-      // Copy to clipboard
-      zeroClipboard.on('dataRequested', function (client) {
-        var highlight = $(this).parent().nextAll('.highlight').first()
-        client.setText(highlight.text())
-      })
-
-      // Notify copy success and reset tooltip title
-      zeroClipboard.on('complete', function () {
-        $htmlBridge
-          .attr('title', 'Copied!')
-          .tooltip('fixTitle')
-          .tooltip('show')
-          .attr('title', 'Copy to clipboard')
-          .tooltip('fixTitle')
-      })
+      e.clearSelection()
     })
 
-    // Hide copy button when no Flash is found
-    // or wrong Flash version is present
-    zeroClipboard.on('noflash wrongflash', function () {
-      $('.zero-clipboard').remove()
-      ZeroClipboard.destroy()
-    })
+    clipboard.on('error', function (e) {
+      var fallbackMsg = /Mac/i.test(navigator.userAgent) ? 'Press \u2318 to copy' : 'Press Ctrl-C to copy'
 
-  })
+      $(e.trigger)
+        .attr('title', fallbackMsg)
+        .tooltip('_fixTitle')
+        .tooltip('show')
+        .attr('title', 'Copy to clipboard')
+        .tooltip('_fixTitle')
+    });
 
-}(jQuery)
+  });
+
+}(jQuery);
 
 ;(function () {
   'use strict';
 
   anchors.options.placement = 'left';
-  anchors.add('.bs-docs-section > h1, .bs-docs-section > h2, .bs-docs-section > h3, .bs-docs-section > h4, .bs-docs-section > h5')
+  anchors.add('.bd-docs-section > h1, .bd-docs-section > h2, .bd-docs-section > h3, .bd-docs-section > h4, .bd-docs-section > h5')
 })();
