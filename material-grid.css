@@ -5,45 +5,6 @@
  * @copyright 2015 Google, Inc.
  * @link https://github.com/google/material-design-lite
  */
-/* colors.scss */
-/* colors.scss */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  IMAGES  ========== */
-/* ==========  List ========== */
-/* Typography */
-/* Shadows */
-/* Animations */
-/* Dialog */
-/*
-* NOTE: Some rules here are applied using duplicate selectors.
-* This is on purpose to increase their specificity when applied.
-* For example: `.mdl-cell--1-col-phone.mdl-cell--1-col-phone`
-*/
-/* colors.scss */
-/* colors.scss */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  IMAGES  ========== */
-/* ==========  List ========== */
 .mdl-grid {
   display: -webkit-flex;
   display: -ms-flexbox;
